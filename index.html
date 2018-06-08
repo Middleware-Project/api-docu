@@ -781,10 +781,10 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Esta llamada permite obtener el listado de todos los nodos pertenecientes al sistema.</p>
+<p>Permite obtener el listado de todos los nodos pertenecientes al sistema.</p>
 <h4 id='http-request-12'>HTTP Request</h4>
 <p><code>GET http://138.68.152.103:3000/api/v2/nodes</code></p>
-<h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://138.68.152.103:3000/api/v2/nodes/5"</span>
+<h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://138.68.152.103:3000/api/v2/nodes/01001"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -793,40 +793,43 @@
     </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"device"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"humidity"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor de humedad"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"humidity"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor de humedad"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Esta llamada retorna la infromación de un nodo en especifico. Además se adjunta un listado de sensores que soporta.</p>
+<p>Permite obtener el listado de nodos pertenecientes a un grupo. Además se adjunta la información de los sensores asociados a estos.</p>
 <h4 id='http-request-13'>HTTP Request</h4>
-<p><code>GET http://138.68.152.103:3000/api/v2/nodes/&lt;ID&gt;</code></p>
+<p><code>GET http://138.68.152.103:3000/api/v2/nodes/&lt;group_id&gt;</code></p>
 <h4 id='parametros-url-8'>Parametros URL</h4>
 <table><thead>
 <tr>
@@ -835,8 +838,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>ID del nodo a retornar</td>
+<td>group_id</td>
+<td>ID del grupo en parituclar (Obligatorio)</td>
 </tr>
 </tbody></table>
 <h3 id='crear-un-nodo-2'>Crear un Nodo</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
@@ -848,8 +851,8 @@
     "modelName": "pysense",
     "manufacterName": "pycom",
     "description": "sensor",
-    "group_id": 1,
-    "sensors":[{"name":"temperature"},{"name":"humidity"}]
+    "group_id": 01001,
+    "sensors":[{"id":1},{"id":2}]
 
 }'</span>
 </code></pre>
@@ -866,7 +869,8 @@
         </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -884,11 +888,11 @@
 </thead><tbody>
 <tr>
 <td>modelName</td>
-<td>modelo del nodo</td>
+<td>modelo del nodo *</td>
 </tr>
 <tr>
 <td>manufacterName</td>
-<td>nombre del desarrollador</td>
+<td>nombre del desarrollador *</td>
 </tr>
 <tr>
 <td>description</td>
@@ -896,13 +900,15 @@
 </tr>
 <tr>
 <td>group_id</td>
-<td>ID del grupo al cual pertenece</td>
+<td>ID del grupo al cual pertenece *</td>
 </tr>
 <tr>
 <td>sensors</td>
-<td>arreglo de nodos asociados</td>
+<td>arreglo de ids sensores asociados *</td>
 </tr>
 </tbody></table>
+
+<p>*Campo obligatorio</p>
 
 <hr>
 <h2 id='sensors-2'>Sensors</h2><h3 id='obtener-todos-los-sensores-2'>Obtener todos los sensores</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
