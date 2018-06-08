@@ -639,7 +639,7 @@ Permite obtener el listado de nodos pertenecientes a un grupo. Además se adjunt
 
 Parametro | Descripción
 --------- | -----------
-group_id | ID del grupo en parituclar (Obligatorio)
+group_id | ID del grupo en particular (Obligatorio)
 
 ### Crear un Nodo
 
