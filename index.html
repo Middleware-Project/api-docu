@@ -222,55 +222,33 @@
             <a href="#introduccion" class="toc-h1 toc-link" data-title="introduccion">Introducción</a>
           </li>
           <li>
-            <a href="#groups" class="toc-h1 toc-link" data-title="groups">Groups</a>
+            <a href="#api-base" class="toc-h1 toc-link" data-title="api-base">API Base</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#obtener-todos-los-grupos" class="toc-h2 toc-link" data-title="obtener-todos-los-grupos">Obtener todos los grupos</a>
+                    <a href="#groups" class="toc-h2 toc-link" data-title="groups">Groups</a>
                   </li>
                   <li>
-                    <a href="#obtener-un-grupo-en-especifico" class="toc-h2 toc-link" data-title="obtener-un-grupo-en-especifico">Obtener un grupo en especifico</a>
+                    <a href="#nodes" class="toc-h2 toc-link" data-title="nodes">Nodes</a>
                   </li>
                   <li>
-                    <a href="#crear-un-grupo" class="toc-h2 toc-link" data-title="crear-un-grupo">Crear un grupo</a>
+                    <a href="#sensors" class="toc-h2 toc-link" data-title="sensors">Sensors</a>
+                  </li>
+                  <li>
+                    <a href="#measures" class="toc-h2 toc-link" data-title="measures">Measures</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#nodes" class="toc-h1 toc-link" data-title="nodes">Nodes</a>
+            <a href="#api-igeo" class="toc-h1 toc-link" data-title="api-igeo">API IGEO</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#obtener-todos-los-nodos" class="toc-h2 toc-link" data-title="obtener-todos-los-nodos">Obtener todos los nodos</a>
+                    <a href="#nodes-2" class="toc-h2 toc-link" data-title="nodes">Nodes</a>
                   </li>
                   <li>
-                    <a href="#obtener-un-nodo-en-especifico" class="toc-h2 toc-link" data-title="obtener-un-nodo-en-especifico">Obtener un nodo en especifico</a>
+                    <a href="#sensors-2" class="toc-h2 toc-link" data-title="sensors">Sensors</a>
                   </li>
                   <li>
-                    <a href="#crear-un-nodo" class="toc-h2 toc-link" data-title="crear-un-nodo">Crear un Nodo</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#sensors" class="toc-h1 toc-link" data-title="sensors">Sensors</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#obtener-todos-los-sensores" class="toc-h2 toc-link" data-title="obtener-todos-los-sensores">Obtener todos los sensores</a>
-                  </li>
-                  <li>
-                    <a href="#obtener-un-sensor-en-especifico" class="toc-h2 toc-link" data-title="obtener-un-sensor-en-especifico">Obtener un sensor en especifico</a>
-                  </li>
-                  <li>
-                    <a href="#crear-un-sensor" class="toc-h2 toc-link" data-title="crear-un-sensor">Crear un sensor</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#measures" class="toc-h1 toc-link" data-title="measures">Measures</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#obtener-todas-las-mediciones" class="toc-h2 toc-link" data-title="obtener-todas-las-mediciones">Obtener todas las mediciones</a>
-                  </li>
-                  <li>
-                    <a href="#obtener-una-medicion-en-especifica" class="toc-h2 toc-link" data-title="obtener-una-medicion-en-especifica">Obtener una medición en especifica</a>
+                    <a href="#measures-2" class="toc-h2 toc-link" data-title="measures">Measures</a>
                   </li>
               </ul>
           </li>
@@ -285,7 +263,7 @@
       <div class="content">
         <h1 id='introduccion'>Introducción</h1>
 <p>La presente documentación hace referencia a la API del middleware IoT perteneciente al taller profesional.</p>
-<h1 id='groups'>Groups</h1><h2 id='obtener-todos-los-grupos'>Obtener todos los grupos</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/groups"</span>
+<h1 id='api-base'>API Base</h1><h2 id='groups'>Groups</h2><h3 id='obtener-todos-los-grupos'>Obtener todos los grupos</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/groups"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -313,9 +291,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todos los grupos</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h4 id='http-request'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/groups</code></p>
-<h2 id='obtener-un-grupo-en-especifico'>Obtener un grupo en especifico</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/groups/1"</span>
+<h3 id='obtener-un-grupo-en-especifico'>Obtener un grupo en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/groups/1"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -356,9 +334,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada retorna la información especifica de un groupo. Además muestra todos los nodos asociados a este.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h4 id='http-request-2'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/groups/&lt;ID&gt;</code></p>
-<h3 id='parametros-url'>Parametros URL</h3>
+<h4 id='parametros-url'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
@@ -370,7 +348,7 @@
 <td>ID del grupo a retornar</td>
 </tr>
 </tbody></table>
-<h2 id='crear-un-grupo'>Crear un grupo</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h3 id='crear-un-grupo'>Crear un grupo</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/v1/groups <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
@@ -396,9 +374,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Este request permite crear un grupo en especifico.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h4 id='http-request-3'>HTTP Request</h4>
 <p><code>POST http://localhost:3000/api/v1/groups</code></p>
-<h3 id='parametros-url-2'>Parametros URL</h3>
+<h4 id='parametros-url-2'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametros</th>
@@ -414,7 +392,7 @@
 <td>descripción del grupo</td>
 </tr>
 </tbody></table>
-<h1 id='nodes'>Nodes</h1><h2 id='obtener-todos-los-nodos'>Obtener todos los nodos</h2><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+<h2 id='nodes'>Nodes</h2><h3 id='obtener-todos-los-nodos'>Obtener todos los nodos</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
   http://localhost:3000/api/v1/nodes
 </code></pre>
 <blockquote>
@@ -447,9 +425,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todos los nodos pertenecientes al sistema.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h4 id='http-request-4'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/nodes</code></p>
-<h2 id='obtener-un-nodo-en-especifico'>Obtener un nodo en especifico</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/nodes/5"</span>
+<h3 id='obtener-un-nodo-en-especifico'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/nodes/5"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -490,9 +468,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada retorna la infromación de un nodo en especifico. Además se adjunta un listado de sensores que soporta.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h4 id='http-request-5'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/nodes/&lt;ID&gt;</code></p>
-<h3 id='parametros-url-3'>Parametros URL</h3>
+<h4 id='parametros-url-3'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
@@ -504,7 +482,7 @@
 <td>ID del nodo a retornar</td>
 </tr>
 </tbody></table>
-<h2 id='crear-un-nodo'>Crear un Nodo</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h3 id='crear-un-nodo'>Crear un Nodo</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/v1/nodes <span class="se">\</span>
   -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -538,9 +516,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite crear un nodo asociado a un grupo y sensores especificos.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h4 id='http-request-6'>HTTP Request</h4>
 <p><code>POST http://localhos:3000/api/v1/nodes</code></p>
-<h3 id='parametros-url-4'>Parametros URL</h3>
+<h4 id='parametros-url-4'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
@@ -570,7 +548,7 @@
 </tbody></table>
 
 <hr>
-<h1 id='sensors'>Sensors</h1><h2 id='obtener-todos-los-sensores'>Obtener todos los sensores</h2><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+<h2 id='sensors'>Sensors</h2><h3 id='obtener-todos-los-sensores'>Obtener todos los sensores</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
   http://localhost:3000/api/v1/sensors
 </code></pre>
 <blockquote>
@@ -601,9 +579,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todos los sensores pertenecientes al sistema.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h4 id='http-request-7'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/sensors</code></p>
-<h2 id='obtener-un-sensor-en-especifico'>Obtener un sensor en especifico</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/sensors/1"</span>
+<h3 id='obtener-un-sensor-en-especifico'>Obtener un sensor en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/sensors/1"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -625,9 +603,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada retorna la infromación de un sensor en especifico.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h4 id='http-request-8'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/sensors/&lt;ID&gt;</code></p>
-<h3 id='parametros-url-5'>Parametros URL</h3>
+<h4 id='parametros-url-5'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
@@ -639,7 +617,7 @@
 <td>ID del sensor a retornar</td>
 </tr>
 </tbody></table>
-<h2 id='crear-un-sensor'>Crear un sensor</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h3 id='crear-un-sensor'>Crear un sensor</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/v1/sensors <span class="se">\</span>
   -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -669,9 +647,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite crear un sensor especifico.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h4 id='http-request-9'>HTTP Request</h4>
 <p><code>POST http://localhos:3000/api/v1/sensors</code></p>
-<h3 id='parametros-url-6'>Parametros URL</h3>
+<h4 id='parametros-url-6'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
@@ -691,7 +669,7 @@
 <td>unidad de medida sensor</td>
 </tr>
 </tbody></table>
-<h1 id='measures'>Measures</h1><h2 id='obtener-todas-las-mediciones'>Obtener todas las mediciones</h2><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+<h2 id='measures'>Measures</h2><h3 id='obtener-todas-las-mediciones'>Obtener todas las mediciones</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
   http://localhost:3000/api/v1/measures
 </code></pre>
 <blockquote>
@@ -715,9 +693,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todas las mediciones pertenecientes al sistema.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h4 id='http-request-10'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/measures</code></p>
-<h2 id='obtener-una-medicion-en-especifica'>Obtener una medición en especifica</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/measures/1"</span>
+<h3 id='obtener-una-medicion-en-especifica'>Obtener una medición en especifica</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhos:3000/api/v1/measures/1"</span>
 </code></pre>
 <blockquote>
 <p>El comando anterior retorna un JSON con la siguiente estructura</p>
@@ -757,9 +735,366 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada retorna la infromación de un sensor en especifico.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h4 id='http-request-11'>HTTP Request</h4>
 <p><code>GET http://localhos:3000/api/v1/measures/&lt;ID&gt;</code></p>
-<h3 id='parametros-url-7'>Parametros URL</h3>
+<h4 id='parametros-url-7'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>ID de la medición a retornar</td>
+</tr>
+</tbody></table>
+<h1 id='api-igeo'>API IGEO</h1><h2 id='nodes-2'>Nodes</h2><h3 id='obtener-todos-los-nodos-2'>Obtener todos los nodos</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+  http://138.68.152.103:3000/api/v2/nodes
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:02:40.195Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:02:40.195Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:03:29.664Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:03:29.664Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada permite obtener el listado de todos los nodos pertenecientes al sistema.</p>
+<h4 id='http-request-12'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/nodes</code></p>
+<h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://138.68.152.103:3000/api/v2/nodes/5"</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"sensors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"humidity"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor de humedad"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada retorna la infromación de un nodo en especifico. Además se adjunta un listado de sensores que soporta.</p>
+<h4 id='http-request-13'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/nodes/&lt;ID&gt;</code></p>
+<h4 id='parametros-url-8'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>ID del nodo a retornar</td>
+</tr>
+</tbody></table>
+<h3 id='crear-un-nodo-2'>Crear un Nodo</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://138.68.152.103:3000/api/v2/nodes <span class="se">\</span>
+  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: e32ec4f9-7286-43cd-96e0-86917df80054'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "modelName": "pysense",
+    "manufacterName": "pycom",
+    "description": "sensor",
+    "group_id": 1,
+    "sensors":[{"name":"temperature"},{"name":"humidity"}]
+
+}'</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nodo creado"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada permite crear un nodo asociado a un grupo y sensores especificos.</p>
+<h4 id='http-request-14'>HTTP Request</h4>
+<p><code>POST http://138.68.152.103:3000/api/v2/nodes</code></p>
+<h4 id='parametros-url-9'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>modelName</td>
+<td>modelo del nodo</td>
+</tr>
+<tr>
+<td>manufacterName</td>
+<td>nombre del desarrollador</td>
+</tr>
+<tr>
+<td>description</td>
+<td>descripción del nodo</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>ID del grupo al cual pertenece</td>
+</tr>
+<tr>
+<td>sensors</td>
+<td>arreglo de nodos asociados</td>
+</tr>
+</tbody></table>
+
+<hr>
+<h2 id='sensors-2'>Sensors</h2><h3 id='obtener-todos-los-sensores-2'>Obtener todos los sensores</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+  http://138.68.152.103:3000/api/v2/sensors
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"humidity"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor de humedad"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:18:08.022Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada permite obtener el listado de todos los sensores pertenecientes al sistema.</p>
+<h4 id='http-request-15'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/sensors</code></p>
+<h3 id='obtener-un-sensor-en-especifico-2'>Obtener un sensor en especifico</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://138.68.152.103:3000/api/v2/sensors/1"</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"sensor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada retorna la infromación de un sensor en especifico.</p>
+<h4 id='http-request-16'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/sensors/&lt;ID&gt;</code></p>
+<h4 id='parametros-url-10'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>ID del sensor a retornar</td>
+</tr>
+</tbody></table>
+<h3 id='crear-un-sensor-2'>Crear un sensor</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://138.68.152.103:3000/api/v2/sensors <span class="se">\</span>
+  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: 2d106a27-37de-4a08-a133-b67fee68f145'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "name": "humidity",
+    "description": "sensor de humedad",
+    "units": "%"
+}'</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sensor creado"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"humidity"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor de humedad"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:13:39.780Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:13:39.780Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada permite crear un sensor especifico.</p>
+<h4 id='http-request-17'>HTTP Request</h4>
+<p><code>POST http://138.68.152.103:3000/api/v2/sensors</code></p>
+<h4 id='parametros-url-11'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>nombre del sensor</td>
+</tr>
+<tr>
+<td>description</td>
+<td>descripción del sensor</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>unidad de medida sensor</td>
+</tr>
+</tbody></table>
+<h2 id='measures-2'>Measures</h2><h3 id='obtener-todas-las-mediciones-2'>Obtener todas las mediciones</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
+  http://138.68.152.103:3000/api/v2/measures
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sensor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:52:32.342Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:52:32.342Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada permite obtener el listado de todas las mediciones pertenecientes al sistema.</p>
+<h4 id='http-request-18'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/measures</code></p>
+<h3 id='obtener-una-medicion-en-especifica-2'>Obtener una medición en especifica</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://138.68.152.103:3000/api/v2/measures/1"</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"measure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"node_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sensor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:52:32.342Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:52:32.342Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"sensor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"temperature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor que permite medir temperatura"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cº"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:17:39.624Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Esta llamada retorna la infromación de un sensor en especifico.</p>
+<h4 id='http-request-19'>HTTP Request</h4>
+<p><code>GET http://138.68.152.103:3000/api/v2/measures/&lt;ID&gt;</code></p>
+<h4 id='parametros-url-12'>Parametros URL</h4>
 <table><thead>
 <tr>
 <th>Parametro</th>
