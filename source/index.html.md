@@ -576,7 +576,7 @@ curl GET \
 }
 ```
 
-Esta llamada permite obtener el listado de todos los nodos pertenecientes al sistema.
+Permite obtener el listado de todos los nodos pertenecientes al sistema.
 
 #### HTTP Request
 
@@ -585,7 +585,7 @@ Esta llamada permite obtener el listado de todos los nodos pertenecientes al sis
 ### Obtener un nodo en especifico
 
 ```shell
-curl "http://138.68.152.103:3000/api/v2/nodes/5"
+curl "http://138.68.152.103:3000/api/v2/nodes/01001"
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -595,48 +595,51 @@ curl "http://138.68.152.103:3000/api/v2/nodes/5"
     "succes": {
         "status": 200
     },
-    "data": {
-        "node": {
-            "id": 5,
-            "modelName": "pysense",
-            "manufacterName": "pycom",
-            "description": "sensor",
-            "group_id": 1,
-            "created_at": "2018-05-18T09:21:54.471Z",
-            "updated_at": "2018-05-18T09:21:54.471Z"
-        },
-        "sensors": [
-            {
-                "id": 1,
-                "name": "temperature",
-                "description": "sensor que permite medir temperatura",
-                "units": "Cº",
-                "created_at": "2018-05-18T09:17:39.624Z",
-                "updated_at": "2018-05-18T09:17:39.624Z"
+    "data": [
+        {
+            "node": {
+                "id": 5,
+                "modelName": "pysense",
+                "manufacterName": "pycom",
+                "description": "device",
+                "status":true,
+                "group_id": 1,
+                "created_at": "2018-05-18T09:21:54.471Z",
+                "updated_at": "2018-05-18T09:21:54.471Z"
             },
-            {
-                "id": 2,
-                "name": "humidity",
-                "description": "sensor de humedad",
-                "units": "%",
-                "created_at": "2018-05-18T09:18:08.022Z",
-                "updated_at": "2018-05-18T09:18:08.022Z"
-            }
-        ]
-    }
+            "sensors": [
+                {
+                    "id": 1,
+                    "name": "temperature",
+                    "description": "sensor que permite medir temperatura",
+                    "units": "Cº",
+                    "created_at": "2018-05-18T09:17:39.624Z",
+                    "updated_at": "2018-05-18T09:17:39.624Z"
+                },
+                {
+                    "id": 2,
+                    "name": "humidity",
+                    "description": "sensor de humedad",
+                    "units": "%",
+                    "created_at": "2018-05-18T09:18:08.022Z",
+                    "updated_at": "2018-05-18T09:18:08.022Z"
+                }
+            ]
+        }
+    ]
 }
 ```
-Esta llamada retorna la infromación de un nodo en especifico. Además se adjunta un listado de sensores que soporta.
+Permite obtener el listado de nodos pertenecientes a un grupo. Además se adjunta la información de los sensores asociados a estos.
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/nodes/<ID>`
+`GET http://138.68.152.103:3000/api/v2/nodes/<group_id>`
 
 #### Parametros URL
 
 Parametro | Descripción
 --------- | -----------
-ID | ID del nodo a retornar
+group_id | ID del grupo en parituclar (Obligatorio)
 
 ### Crear un Nodo
 
@@ -650,8 +653,8 @@ curl -X POST \
 	"modelName": "pysense",
 	"manufacterName": "pycom",
 	"description": "sensor",
-	"group_id": 1,
-	"sensors":[{"name":"temperature"},{"name":"humidity"}]
+	"group_id": 01001,
+	"sensors":[{"id":1},{"id":2}]
 	
 }'
 ```
@@ -669,7 +672,8 @@ curl -X POST \
         "modelName": "pysense",
         "manufacterName": "pycom",
         "description": "sensor",
-        "group_id": 1,
+        "status":false,
+        "group_id": 01001,
         "created_at": "2018-05-24T06:17:13.257Z",
         "updated_at": "2018-05-24T06:17:13.257Z"
     }
@@ -686,11 +690,13 @@ Esta llamada permite crear un nodo asociado a un grupo y sensores especificos.
 
 Parametro | Descripción
 --------- | -----------
-modelName | modelo del nodo
-manufacterName | nombre del desarrollador
+modelName | modelo del nodo *
+manufacterName | nombre del desarrollador *
 description | descripción del nodo
-group_id | ID del grupo al cual pertenece
-sensors | arreglo de nodos asociados
+group_id | ID del grupo al cual pertenece *
+sensors | arreglo de ids sensores asociados *
+
+*Campo obligatorio
 
 -------------------------------------------------
 ## Sensors
