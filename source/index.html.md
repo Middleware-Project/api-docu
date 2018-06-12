@@ -18,7 +18,7 @@ search: true
 
 La presente documentación hace referencia a la API del middleware IoT perteneciente al taller profesional. En primer lugar se presenta el procedimiento de autenticación de usuarios acorde a JSON-Web token. Luego se documenta la API genérica del proyecto y la API destinada a la integración con IGEO.
 
-# Procedimiento de Autenticación
+# Autenticación
 ## Authenticate
 
 ### Autenticar usuario 
