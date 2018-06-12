@@ -41,7 +41,7 @@ Esta llamada permite autenticar usuarios en el sistema proporcionando email y pa
 `Authorization: token....`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Se debe reemplazar <code>token...</code> con el token personal entregado.
 </aside>
 
 #### HTTP Request
