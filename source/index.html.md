@@ -16,7 +16,45 @@ search: true
 
 # Introducción
 
-La presente documentación hace referencia a la API del middleware IoT perteneciente al taller profesional.
+La presente documentación hace referencia a la API del middleware IoT perteneciente al taller profesional. En primer lugar se presenta el procedimiento de autenticación de usuarios acorde a JSON-Web token. Luego se documenta la API genérica del proyecto y la API destinada a la integración con IGEO.
+
+# Procedimiento de Autenticación
+## Authenticate
+
+### Autenticar usuario 
+
+```shell
+curl -X POST \
+  http://localhost:3000/api/v1/authenticate \
+  -d '{"email":"example@mail.com","password":"123123123"}'
+```
+
+> El comando anterior retorna un JSON con la siguiente estructura
+
+```json
+{
+    "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1Mjg..."
+}
+```
+Esta llamada permite autenticar usuarios en el sistema proporcionando email y password. Para realizar request en el sistema es necesario adjuntar en el Header de cada llamada de la siguiente forma: 
+
+`Authorization: token....`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+#### HTTP Request
+
+`POST http://localhos:3000/api/v2/authenticate`
+
+#### Parametros Body
+
+Parametro | Descripción
+--------- | -----------
+email | Email de usuario
+password | Contraseña de usuaior
+
 
 # API Base
 ## Groups
@@ -24,7 +62,8 @@ La presente documentación hace referencia a la API del middleware IoT perteneci
 ### Obtener todos los grupos
 
 ```shell
-curl "http://localhos:3000/api/v1/groups"
+curl http://localhos:3000/api/v1/groups \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -63,7 +102,8 @@ Esta llamada permite obtener el listado de todos los grupos
 ### Obtener un grupo en especifico
 
 ```shell
-curl "http://localhos:3000/api/v1/groups/1"
+curl http://localhos:3000/api/v1/groups/1 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -122,7 +162,7 @@ ID | ID del grupo a retornar
 ```shell
 curl -X POST \
   http://localhost:3000/api/v1/groups \
-  -H 'Content-Type: application/json' \
+  -H "Authorization: token..." \
   -d '{
 	"name": "Sala de reuniones",
 	"description": "Sala ubicada en el primer piso"
@@ -166,7 +206,8 @@ description | descripción del grupo
 
 ```shell
 curl GET \
-  http://localhost:3000/api/v1/nodes
+  http://localhost:3000/api/v1/nodes \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -208,7 +249,8 @@ Esta llamada permite obtener el listado de todos los nodos pertenecientes al sis
 ### Obtener un nodo en especifico
 
 ```shell
-curl "http://localhos:3000/api/v1/nodes/5"
+curl http://localhos:3000/api/v1/nodes/5 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -266,9 +308,7 @@ ID | ID del nodo a retornar
 ```shell
 curl -X POST \
   http://localhost:3000/api/v1/nodes \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: e32ec4f9-7286-43cd-96e0-86917df80054' \
+  -H "Authorization: token..." \
   -d '{
 	"modelName": "pysense",
 	"manufacterName": "pycom",
@@ -276,7 +316,7 @@ curl -X POST \
 	"group_id": 1,
 	"sensors":[{"name":"temperature"},{"name":"humidity"}]
 	
-}'
+    }'
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -322,7 +362,8 @@ sensors | arreglo de nodos asociados
 
 ```shell
 curl GET \
-  http://localhost:3000/api/v1/sensors
+  http://localhost:3000/api/v1/sensors \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -362,7 +403,8 @@ Esta llamada permite obtener el listado de todos los sensores pertenecientes al 
 ### Obtener un sensor en especifico
 
 ```shell
-curl "http://localhos:3000/api/v1/sensors/1"
+curl http://localhos:3000/api/v1/sensors/1 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -401,14 +443,12 @@ ID | ID del sensor a retornar
 ```shell
 curl -X POST \
   http://localhost:3000/api/v1/sensors \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 2d106a27-37de-4a08-a133-b67fee68f145' \
+  -H "Authorization: token..."
   -d '{
 	"name": "humidity",
 	"description": "sensor de humedad",
 	"units": "%"
-}'
+    }'
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -450,7 +490,8 @@ unit| unidad de medida sensor
 
 ```shell
 curl GET \
-  http://localhost:3000/api/v1/measures
+  http://localhost:3000/api/v1/measures \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -483,7 +524,8 @@ Esta llamada permite obtener el listado de todas las mediciones pertenecientes a
 ### Obtener una medición en especifica
 
 ```shell
-curl "http://localhos:3000/api/v1/measures/1"
+curl http://localhos:3000/api/v1/measures/1 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -543,7 +585,8 @@ ID | ID de la medición a retornar
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/nodes
+  http://138.68.152.103:3000/api/v2/nodes \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -585,7 +628,8 @@ Permite obtener el listado de todos los nodos pertenecientes al sistema.
 ### Obtener un nodo en especifico
 
 ```shell
-curl "http://138.68.152.103:3000/api/v2/nodes/01001"
+curl http://138.68.152.103:3000/api/v2/nodes/01001 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -646,9 +690,7 @@ group_id | ID del grupo en particular (Obligatorio)
 ```shell
 curl -X POST \
   http://138.68.152.103:3000/api/v2/nodes \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: e32ec4f9-7286-43cd-96e0-86917df80054' \
+    -H "Authorization: token..."
   -d '{
 	"modelName": "pysense",
 	"manufacterName": "pycom",
@@ -705,7 +747,8 @@ sensors | arreglo de ids sensores asociados *
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/sensors
+  http://138.68.152.103:3000/api/v2/sensors \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -745,7 +788,8 @@ Esta llamada permite obtener el listado de todos los sensores pertenecientes al 
 ### Obtener un sensor en especifico
 
 ```shell
-curl "http://138.68.152.103:3000/api/v2/sensors/1"
+curl http://138.68.152.103:3000/api/v2/sensors/1 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -784,9 +828,7 @@ ID | ID del sensor a retornar
 ```shell
 curl -X POST \
   http://138.68.152.103:3000/api/v2/sensors \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 2d106a27-37de-4a08-a133-b67fee68f145' \
+    -H "Authorization: token..."
   -d '{
 	"name": "humidity",
 	"description": "sensor de humedad",
@@ -833,7 +875,8 @@ unit| unidad de medida sensor
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/measures
+  http://138.68.152.103:3000/api/v2/measures \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -866,7 +909,8 @@ Esta llamada permite obtener el listado de todas las mediciones pertenecientes a
 ### Obtener una medición en especifica
 
 ```shell
-curl "http://138.68.152.103:3000/api/v2/measures/1"
+curl http://138.68.152.103:3000/api/v2/measures/1 \
+    -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
