@@ -222,7 +222,7 @@
             <a href="#introduccion" class="toc-h1 toc-link" data-title="introduccion">Introducción</a>
           </li>
           <li>
-            <a href="#procedimiento-de-autenticacion" class="toc-h1 toc-link" data-title="procedimiento-de-autenticacion">Procedimiento de Autenticación</a>
+            <a href="#autenticacion" class="toc-h1 toc-link" data-title="autenticacion">Autenticación</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#authenticate" class="toc-h2 toc-link" data-title="authenticate">Authenticate</a>
@@ -271,7 +271,7 @@
       <div class="content">
         <h1 id='introduccion'>Introducción</h1>
 <p>La presente documentación hace referencia a la API del middleware IoT perteneciente al taller profesional. En primer lugar se presenta el procedimiento de autenticación de usuarios acorde a JSON-Web token. Luego se documenta la API genérica del proyecto y la API destinada a la integración con IGEO.</p>
-<h1 id='procedimiento-de-autenticacion'>Procedimiento de Autenticación</h1><h2 id='authenticate'>Authenticate</h2><h3 id='autenticar-usuario'>Autenticar usuario</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h1 id='autenticacion'>Autenticación</h1><h2 id='authenticate'>Authenticate</h2><h3 id='autenticar-usuario'>Autenticar usuario</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/v1/authenticate <span class="se">\</span>
   -d <span class="s1">'{"email":"example@mail.com","password":"123123123"}'</span>
 </code></pre>
