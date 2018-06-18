@@ -797,43 +797,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 <td>ID de la medición a retornar</td>
 </tr>
 </tbody></table>
-<h1 id='api-igeo'>API IGEO</h1><h2 id='nodes-2'>Nodes</h2><h3 id='obtener-todos-los-nodos-2'>Obtener todos los nodos</h3><pre class="highlight shell tab-shell"><code>curl GET <span class="se">\</span>
-  http://198.199.68.64/api/v2/nodes <span class="se">\</span>
-    -H <span class="s2">"Authorization: token..."</span>
-</code></pre>
-<blockquote>
-<p>El comando anterior retorna un JSON con la siguiente estructura</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:02:40.195Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:02:40.195Z"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:03:29.664Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:03:29.664Z"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Permite obtener el listado de todos los nodos pertenecientes al sistema.</p>
-<h4 id='http-request-13'>HTTP Request</h4>
-<p><code>GET http://198.199.68.64/api/v2/nodes</code></p>
-<h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl http://198.199.68.64/api/v2/nodes/01001 <span class="se">\</span>
+<h1 id='api-igeo'>API IGEO</h1><h2 id='nodes-2'>Nodes</h2><h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl http://198.199.68.64/api/v2/nodes/1001 <span class="se">\</span>
     -H <span class="s2">"Authorization: token..."</span>
 </code></pre>
 <blockquote>
@@ -851,7 +815,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
                 </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"device"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -878,7 +842,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Permite obtener el listado de nodos pertenecientes a un grupo. Además se adjunta la información de los sensores asociados a estos.</p>
-<h4 id='http-request-14'>HTTP Request</h4>
+<h4 id='http-request-13'>HTTP Request</h4>
 <p><code>GET http://198.199.68.64/api/v2/nodes/&lt;group_id&gt;</code></p>
 <h4 id='parametros-url-8'>Parametros URL</h4>
 <table><thead>
@@ -925,7 +889,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite crear un nodo asociado a un grupo y sensores especificos.</p>
-<h4 id='http-request-15'>HTTP Request</h4>
+<h4 id='http-request-14'>HTTP Request</h4>
 <p><code>POST http://198.199.68.64/api/v2/nodes</code></p>
 <h4 id='parametros-url-9'>Parametros URL</h4>
 <table><thead>
@@ -991,7 +955,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todos los sensores pertenecientes al sistema.</p>
-<h4 id='http-request-16'>HTTP Request</h4>
+<h4 id='http-request-15'>HTTP Request</h4>
 <p><code>GET http://198.199.68.64/api/v2/sensors</code></p>
 <h3 id='obtener-un-sensor-en-especifico-2'>Obtener un sensor en especifico</h3><pre class="highlight shell tab-shell"><code>curl http://198.199.68.64/api/v2/sensors/1 <span class="se">\</span>
     -H <span class="s2">"Authorization: token..."</span>
@@ -1016,7 +980,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada retorna la infromación de un sensor en especifico.</p>
-<h4 id='http-request-17'>HTTP Request</h4>
+<h4 id='http-request-16'>HTTP Request</h4>
 <p><code>GET http://198.199.68.64/api/v2/sensors/&lt;ID&gt;</code></p>
 <h4 id='parametros-url-10'>Parametros URL</h4>
 <table><thead>
@@ -1058,7 +1022,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite crear un sensor especifico.</p>
-<h4 id='http-request-18'>HTTP Request</h4>
+<h4 id='http-request-17'>HTTP Request</h4>
 <p><code>POST http://198.199.68.64/api/v2/sensors</code></p>
 <h4 id='parametros-url-11'>Parametros URL</h4>
 <table><thead>
@@ -1105,7 +1069,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Esta llamada permite obtener el listado de todas las mediciones pertenecientes a un grupo determinado.</p>
-<h4 id='http-request-19'>HTTP Request</h4>
+<h4 id='http-request-18'>HTTP Request</h4>
 <p><code>GET http://198.199.68.64/api/v2/measures?node_id=&lt;node_id&gt;&amp;sensor_id=&lt;sensor_id&gt;&amp;limit=&lt;limit&gt;</code></p>
 <h4 id='parametros-url-12'>Parametros URL</h4>
 <table><thead>
