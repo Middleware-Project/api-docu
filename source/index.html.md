@@ -585,7 +585,7 @@ ID | ID de la medición a retornar
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/nodes \
+  http://198.199.68.64/api/v2/nodes \
     -H "Authorization: token..."
 ```
 
@@ -623,12 +623,12 @@ Permite obtener el listado de todos los nodos pertenecientes al sistema.
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/nodes`
+`GET http://198.199.68.64/api/v2/nodes`
 
 ### Obtener un nodo en especifico
 
 ```shell
-curl http://138.68.152.103:3000/api/v2/nodes/01001 \
+curl http://198.199.68.64/api/v2/nodes/01001 \
     -H "Authorization: token..."
 ```
 
@@ -677,7 +677,7 @@ Permite obtener el listado de nodos pertenecientes a un grupo. Además se adjunt
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/nodes/<group_id>`
+`GET http://198.199.68.64/api/v2/nodes/<group_id>`
 
 #### Parametros URL
 
@@ -689,13 +689,13 @@ group_id | ID del grupo en particular (Obligatorio)
 
 ```shell
 curl -X POST \
-  http://138.68.152.103:3000/api/v2/nodes \
+  http://198.199.68.64/api/v2/nodes \
     -H "Authorization: token..."
   -d '{
 	"modelName": "pysense",
 	"manufacterName": "pycom",
 	"description": "sensor",
-	"group_id": 01001,
+	"group_id": 1001,
 	"sensors":[{"id":1},{"id":2}]
 	
 }'
@@ -726,7 +726,7 @@ Esta llamada permite crear un nodo asociado a un grupo y sensores especificos.
 
 #### HTTP Request
 
-`POST http://138.68.152.103:3000/api/v2/nodes`
+`POST http://198.199.68.64/api/v2/nodes`
 
 #### Parametros URL
 
@@ -747,7 +747,7 @@ sensors | arreglo de ids sensores asociados *
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/sensors \
+  http://198.199.68.64/api/v2/sensors \
     -H "Authorization: token..."
 ```
 
@@ -783,12 +783,12 @@ Esta llamada permite obtener el listado de todos los sensores pertenecientes al 
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/sensors`
+`GET http://198.199.68.64/api/v2/sensors`
 
 ### Obtener un sensor en especifico
 
 ```shell
-curl http://138.68.152.103:3000/api/v2/sensors/1 \
+curl http://198.199.68.64/api/v2/sensors/1 \
     -H "Authorization: token..."
 ```
 
@@ -815,7 +815,7 @@ Esta llamada retorna la infromación de un sensor en especifico.
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/sensors/<ID>`
+`GET http://198.199.68.64/api/v2/sensors/<ID>`
 
 #### Parametros URL
 
@@ -827,7 +827,7 @@ ID | ID del sensor a retornar
 
 ```shell
 curl -X POST \
-  http://138.68.152.103:3000/api/v2/sensors \
+  http://198.199.68.64/api/v2/sensors \
     -H "Authorization: token..."
   -d '{
 	"name": "humidity",
@@ -859,7 +859,7 @@ Esta llamada permite crear un sensor especifico.
 
 #### HTTP Request
 
-`POST http://138.68.152.103:3000/api/v2/sensors`
+`POST http://198.199.68.64/api/v2/sensors`
 
 #### Parametros URL
 
@@ -875,7 +875,7 @@ unit| unidad de medida sensor
 
 ```shell
 curl GET \
-  http://138.68.152.103:3000/api/v2/measures \
+  http://198.199.68.64/api/v2/measures?node_id=1&sensor_id=2&limit=10 \
     -H "Authorization: token..."
 ```
 
@@ -900,64 +900,18 @@ curl GET \
 }
 ```
 
-Esta llamada permite obtener el listado de todas las mediciones pertenecientes al sistema.
+Esta llamada permite obtener el listado de todas las mediciones pertenecientes a un grupo determinado.
 
 #### HTTP Request
 
-`GET http://138.68.152.103:3000/api/v2/measures`
-
-### Obtener una medición en especifica
-
-```shell
-curl http://138.68.152.103:3000/api/v2/measures/1 \
-    -H "Authorization: token..."
-```
-
-> El comando anterior retorna un JSON con la siguiente estructura
-
-```json
-{
-    "succes": {
-        "status": 200
-    },
-    "data": {
-        "measure": {
-            "id": 1,
-            "data": 24.4,
-            "unit": "Cº",
-            "node_id": 5,
-            "sensor_id": 1,
-            "created_at": "2018-05-18T09:52:32.342Z",
-            "updated_at": "2018-05-18T09:52:32.342Z"
-        },
-        "node": {
-            "id": 5,
-            "modelName": "pysense",
-            "manufacterName": "pycom",
-            "description": "sensor",
-            "group_id": 1,
-            "created_at": "2018-05-18T09:21:54.471Z",
-            "updated_at": "2018-05-18T09:21:54.471Z"
-        },
-        "sensor": {
-            "id": 1,
-            "name": "temperature",
-            "description": "sensor que permite medir temperatura",
-            "units": "Cº",
-            "created_at": "2018-05-18T09:17:39.624Z",
-            "updated_at": "2018-05-18T09:17:39.624Z"
-        }
-    }
-}
-```
-Esta llamada retorna la infromación de un sensor en especifico.
-
-#### HTTP Request
-
-`GET http://138.68.152.103:3000/api/v2/measures/<ID>`
+`GET http://198.199.68.64/api/v2/measures?node_id=<node_id>&sensor_id=<sensor_id>&limit=<limit>`
 
 #### Parametros URL
 
 Parametro | Descripción
 --------- | -----------
-ID | ID de la medición a retornar
+node_id | ID node *
+sensor_id | ID sensor *
+limit | Cantidad requerida
+
+*Campo obligatorio
