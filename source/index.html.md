@@ -695,7 +695,6 @@ sensors | arreglo de ids sensores asociados *
 
 *Campo obligatorio
 
--------------------------------------------------
 ## Sensors
 
 ### Obtener todos los sensores
