@@ -580,55 +580,10 @@ ID | ID de la medición a retornar
 # API IGEO
 
 ## Nodes
-
-### Obtener todos los nodos
-
-```shell
-curl GET \
-  http://198.199.68.64/api/v2/nodes \
-    -H "Authorization: token..."
-```
-
-> El comando anterior retorna un JSON con la siguiente estructura
-
-```json
-{
-    "succes": {
-        "status": 200
-    },
-    "data": [
-        {
-            "id": 1,
-            "modelName": "pysense",
-            "manufacterName": "pycom",
-            "description": "sensor",
-            "group_id": 1,
-            "created_at": "2018-05-18T09:02:40.195Z",
-            "updated_at": "2018-05-18T09:02:40.195Z"
-        },
-        {
-            "id": 2,
-            "modelName": "pysense",
-            "manufacterName": "pycom",
-            "description": "sensor",
-            "group_id": 1,
-            "created_at": "2018-05-18T09:03:29.664Z",
-            "updated_at": "2018-05-18T09:03:29.664Z"
-        }
-    ]
-}
-```
-
-Permite obtener el listado de todos los nodos pertenecientes al sistema.
-
-#### HTTP Request
-
-`GET http://198.199.68.64/api/v2/nodes`
-
 ### Obtener un nodo en especifico
 
 ```shell
-curl http://198.199.68.64/api/v2/nodes/01001 \
+curl http://198.199.68.64/api/v2/nodes/1001 \
     -H "Authorization: token..."
 ```
 
@@ -647,7 +602,7 @@ curl http://198.199.68.64/api/v2/nodes/01001 \
                 "manufacterName": "pycom",
                 "description": "device",
                 "status":true,
-                "group_id": 1,
+                "group_id": 1001,
                 "created_at": "2018-05-18T09:21:54.471Z",
                 "updated_at": "2018-05-18T09:21:54.471Z"
             },
