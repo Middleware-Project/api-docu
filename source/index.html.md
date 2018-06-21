@@ -601,6 +601,7 @@ curl http://198.199.68.64/api/v2/nodes/1001 \
                 "modelName": "pysense",
                 "manufacterName": "pycom",
                 "description": "device",
+                "unique_id":"240ac4025e54",
                 "status":true,
                 "group_id": 1001,
                 "created_at": "2018-05-18T09:21:54.471Z",
