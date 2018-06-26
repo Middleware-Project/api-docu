@@ -828,7 +828,6 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
     </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"node_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">   
             </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -844,6 +843,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
                 </span><span class="s2">"frequency"</span><span class="p">:</span><span class="mf">868.1</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"data_rate"</span><span class="p">:</span><span class="s2">"SF7BW125"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"gateway_id"</span><span class="p">:</span><span class="s2">"B827EBFFFE87BD22"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"node_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-18T09:21:54.471Z"</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -892,6 +892,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
     "manufacterName": "pycom",
     "description": "sensor",
     "group_id": 1001,
+    "node_type":1,
     "sensors":[{"id":1},{"id":2}]
 
 }'</span>
@@ -911,6 +912,7 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"node_type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -945,6 +947,10 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 <tr>
 <td>sensors</td>
 <td>arreglo de ids sensores asociados *</td>
+</tr>
+<tr>
+<td>node_type</td>
+<td>representa el tipo de nodo *</td>
 </tr>
 </tbody></table>
 
