@@ -579,6 +579,14 @@ ID | ID de la medición a retornar
 
 # API IGEO
 
+## Node Type
+    La variable node_type representa el tipo de dispositivo, por lo tanto, indica el tipo de información que retornará la llamada.
+
+Valor | Descripción
+--------- | -----------
+1 | Representa un nodo Pycom Wipy
+2 | Representa un nodo Pycom LoRa 
+
 ## Nodes
 ### Obtener un nodo en especifico
 
@@ -594,8 +602,9 @@ curl http://198.199.68.64/api/v2/nodes/1001 \
     "succes": {
         "status": 200
     },
+    "node_type":2,
     "data": [
-        {
+        {   
             "node": {
                 "id": 5,
                 "modelName": "pysense",
