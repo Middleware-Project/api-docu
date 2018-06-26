@@ -602,7 +602,6 @@ curl http://198.199.68.64/api/v2/nodes/1001 \
     "succes": {
         "status": 200
     },
-    "node_type":2,
     "data": [
         {   
             "node": {
@@ -618,6 +617,7 @@ curl http://198.199.68.64/api/v2/nodes/1001 \
                 "frequency":868.1,
                 "data_rate":"SF7BW125",
                 "gateway_id":"B827EBFFFE87BD22",
+                "node_type":2,
                 "created_at": "2018-05-18T09:21:54.471Z",
                 "updated_at": "2018-05-18T09:21:54.471Z"
             },
@@ -666,6 +666,7 @@ curl -X POST \
 	"manufacterName": "pycom",
 	"description": "sensor",
 	"group_id": 1001,
+    "node_type":1,
 	"sensors":[{"id":1},{"id":2}]
 	
 }'
@@ -686,6 +687,7 @@ curl -X POST \
         "description": "sensor",
         "status":false,
         "group_id": 01001,
+        "node_type":1,
         "created_at": "2018-05-24T06:17:13.257Z",
         "updated_at": "2018-05-24T06:17:13.257Z"
     }
@@ -707,6 +709,7 @@ manufacterName | nombre del desarrollador *
 description | descripción del nodo
 group_id | ID del grupo al cual pertenece *
 sensors | arreglo de ids sensores asociados *
+node_type | representa el tipo de nodo *
 
 *Campo obligatorio
 
