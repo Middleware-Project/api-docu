@@ -613,6 +613,11 @@ curl http://198.199.68.64/api/v2/nodes/1001 \
                 "unique_id":"240ac4025e54",
                 "status":true,
                 "group_id": 1001,
+                "app_id":"middleware",
+                "modulation":"LoRa",
+                "frequency":868.1,
+                "data_rate":"SF7BW125",
+                "gateway_id":"B827EBFFFE87BD22",
                 "created_at": "2018-05-18T09:21:54.471Z",
                 "updated_at": "2018-05-18T09:21:54.471Z"
             },
