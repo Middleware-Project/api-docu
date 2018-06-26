@@ -250,6 +250,9 @@
             <a href="#api-igeo" class="toc-h1 toc-link" data-title="api-igeo">API IGEO</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#node-type" class="toc-h2 toc-link" data-title="node-type">Node Type</a>
+                  </li>
+                  <li>
                     <a href="#nodes-2" class="toc-h2 toc-link" data-title="nodes">Nodes</a>
                   </li>
                   <li>
@@ -797,7 +800,25 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 <td>ID de la medición a retornar</td>
 </tr>
 </tbody></table>
-<h1 id='api-igeo'>API IGEO</h1><h2 id='nodes-2'>Nodes</h2><h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl http://198.199.68.64/api/v2/nodes/1001 <span class="se">\</span>
+<h1 id='api-igeo'>API IGEO</h1><h2 id='node-type'>Node Type</h2>
+<p>La variable node_type representa el tipo de dispositivo, por lo tanto, indica el tipo de información que retornará la llamada.</p>
+
+<table><thead>
+<tr>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Representa un nodo Pycom Wipy</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Representa un nodo Pycom LoRa</td>
+</tr>
+</tbody></table>
+<h2 id='nodes-2'>Nodes</h2><h3 id='obtener-un-nodo-en-especifico-2'>Obtener un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl http://198.199.68.64/api/v2/nodes/1001 <span class="se">\</span>
     -H <span class="s2">"Authorization: token..."</span>
 </code></pre>
 <blockquote>
@@ -807,8 +828,9 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
     </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"node_type"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
+        </span><span class="p">{</span><span class="w">   
             </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
