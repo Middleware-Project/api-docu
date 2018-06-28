@@ -804,7 +804,7 @@ curl -X POST \
   -d '{
 	"name": "humidity",
 	"description": "sensor de humedad",
-	"units": "%"
+	"units": "%",
 }'
 ```
 
@@ -865,6 +865,7 @@ curl GET \
             "unit": "Cº",
             "node_id": 5,
             "sensor_id": 1,
+            "sensor_name":"temperature",
             "created_at": "2018-05-18T09:52:32.342Z",
             "updated_at": "2018-05-18T09:52:32.342Z"
         }
