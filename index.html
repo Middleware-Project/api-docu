@@ -1126,6 +1126,45 @@ Se debe reemplazar <code>token...</code> con el token personal entregado.
 </tbody></table>
 
 <p>*Campo obligatorio</p>
+<h3 id='eliminar-un-nodo-en-especifico'>Eliminar un nodo en especifico</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  http://198.199.68.64/api/v2/nodes/1001 <span class="se">\</span>
+  -H <span class="s2">"Authorization: token..."</span>
+</code></pre>
+<blockquote>
+<p>El comando anterior retorna un JSON con la siguiente estructura</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"succes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pysense"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manufacterName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pycom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sensor"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"node_type"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-24T06:17:13.257Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Permite eliminar un nodo del sistema.</p>
+<h4 id='http-request-19'>HTTP Request</h4>
+<p><code>DELETE http://198.199.68.64/api/v2/nodes/&lt;group_id&gt;</code></p>
+<h4 id='parametros-url-13'>Parametros URL</h4>
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group_id</td>
+<td>ID del grupo en particular (Obligatorio)</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
