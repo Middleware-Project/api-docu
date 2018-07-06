@@ -713,6 +713,46 @@ node_type | representa el tipo de nodo *
 
 *Campo obligatorio
 
+### Eliminar un nodo en especifico
+
+```shell
+curl -X DELETE \
+  http://198.199.68.64/api/v2/nodes/1001 \
+  -H "Authorization: token..."
+```
+
+> El comando anterior retorna un JSON con la siguiente estructura
+
+```json
+{
+    "succes": {
+        "status": 200
+    },
+    "data": {
+        "id": 1,
+        "modelName": "pysense",
+        "manufacterName": "pycom",
+        "description": "sensor",
+        "status":false,
+        "group_id": 1001,
+        "node_type":1,
+        "created_at": "2018-05-24T06:17:13.257Z",
+        "updated_at": "2018-05-24T06:17:13.257Z"
+    }
+}
+```
+Permite eliminar un nodo del sistema.
+
+#### HTTP Request
+
+`DELETE http://198.199.68.64/api/v2/nodes/<group_id>`
+
+#### Parametros URL
+
+Parametro | Descripción
+--------- | -----------
+group_id | ID del grupo en particular (Obligatorio)
+
 ## Sensors
 
 ### Obtener todos los sensores
@@ -889,42 +929,3 @@ limit | Cantidad requerida
 
 *Campo obligatorio
 
-### Eliminar un nodo en especifico
-
-```shell
-curl -X DELETE \
-  http://198.199.68.64/api/v2/nodes/1001 \
-  -H "Authorization: token..."
-```
-
-> El comando anterior retorna un JSON con la siguiente estructura
-
-```json
-{
-    "succes": {
-        "status": 200
-    },
-    "data": {
-        "id": 1,
-        "modelName": "pysense",
-        "manufacterName": "pycom",
-        "description": "sensor",
-        "status":false,
-        "group_id": 1001,
-        "node_type":1,
-        "created_at": "2018-05-24T06:17:13.257Z",
-        "updated_at": "2018-05-24T06:17:13.257Z"
-    }
-}
-```
-Permite eliminar un nodo del sistema.
-
-#### HTTP Request
-
-`DELETE http://198.199.68.64/api/v2/nodes/<group_id>`
-
-#### Parametros URL
-
-Parametro | Descripción
---------- | -----------
-group_id | ID del grupo en particular (Obligatorio)
