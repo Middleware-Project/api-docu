@@ -892,8 +892,9 @@ limit | Cantidad requerida
 ### Eliminar un nodo en especifico
 
 ```shell
-curl http://198.199.68.64/api/v2/nodes/1001 \
-    -H "Authorization: token..."
+curl -X DELETE \
+  http://198.199.68.64/api/v2/nodes/1001 \
+  -H "Authorization: token..."
 ```
 
 > El comando anterior retorna un JSON con la siguiente estructura
@@ -920,7 +921,7 @@ Permite eliminar un nodo del sistema.
 
 #### HTTP Request
 
-`GET http://198.199.68.64/api/v2/nodes/<group_id>`
+`DELETE http://198.199.68.64/api/v2/nodes/<group_id>`
 
 #### Parametros URL
 
